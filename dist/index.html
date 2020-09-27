@@ -24,13 +24,19 @@
       });
 
       console.log(`MyComponent:`, MyComponent);
-      createApp({
-        data() {
-          return {
-            message: "Hello Vue3",
-          };
+      // createApp({
+      //   data() {
+      //     return {
+      //       message: "Hello Vue3",
+      //     };
+      //   },
+      // }).mount("#app");
+      const App = {
+        render() {
+          return Vue.h("h1", { class: "1123" }, "Hello Vue3js.cn");
         },
-      }).mount("#app");
+      };
+      Vue.createApp(App).mount("#app");
     </script>
   </body>
 </html>
