@@ -45,3 +45,27 @@ const a = `
 `;
 const ast_a = recast.parse(a);
 console.log(ast_a, ".program.body[0]----");
+
+// 只能走1步或者2步， 走到80步 有多少种方法
+
+/**getNum
+ * @param num
+ * @return total
+ */
+// 3 =  1+1+1 | 1+2 |2+1
+// 4 = 1+1+1+1 | 1+1+2（3）
+//  递归容易卡
+function getNum(num) {
+  if (num === 1) {
+    return 1;
+  }
+  if (num === 2) {
+    return 2;
+  }
+  return getNum(num - 1) + getNum(num - 2);
+}
+console.log(getNum(30), "getNum(3)");
+
+function getNum1(num){
+  
+}
