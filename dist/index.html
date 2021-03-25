@@ -4,39 +4,34 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://cdn.staticfile.org/vue/2.6.9/vue.min.js"></script>
   </head>
+  <style>
+    .test{
+      /* width: 40px;
+      height: 40px;
+      border: 1px solid #000;
+      border-radius: 50%;
+      position: relative; */
+      width: 0;
+      height: 0;
+      border-width:40px 40px 40px 0px;
+      border-style: solid;
+      border-color:transparent blue transparent transparent;
+    }
+    .test::after{
+      content: "";
+      position: absolute;
+      top: 32px;
+      left: 15px;
+      border-width:38px 38px 38px 0px;
+      border-style: solid;
+      border-color:transparent #fff transparent transparent;
+    }
+  </style>
   <body>
     <div id="app">{{message}}</div>
+    <div class="test1"></div>
     <script src="./app.bundle.js"></script>
-    <script>
-      const { createApp, defineComponent } = Vue;
-
-      const MyComponent = defineComponent({
-        data() {
-          return { count: 1 };
-        },
-        methods: {
-          increment() {
-            this.count++;
-          },
-        },
-      });
-
-      console.log(`MyComponent:`, MyComponent);
-      // createApp({
-      //   data() {
-      //     return {
-      //       message: "Hello Vue3",
-      //     };
-      //   },
-      // }).mount("#app");
-      const App = {
-        render() {
-          return Vue.h("h1", { class: "1123" }, "0000111");
-        },
-      };
-      Vue.createApp(App).mount("#app");
-    </script>
   </body>
 </html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <div id="app">{{message}}</div>
+    <script src="./app.bundle.js"></script>
+    <script>
+      const { createApp, defineComponent } = Vue;
+
+      const MyComponent = defineComponent({
+        data() {
+          return { count: 1 };
+        },
+        methods: {
+          increment() {
+            this.count++;
+          },
+        },
+      });
+
+      console.log(`MyComponent:`, MyComponent);
+      // createApp({
+      //   data() {
+      //     return {
+      //       message: "Hello Vue3",
+      //     };
+      //   },
+      // }).mount("#app");
+      const App = {
+        render() {
+          return Vue.h("h1", { class: "1123" }, "0000111");
+        },
+      };
+      Vue.createApp(App).mount("#app");
+    </script>
+  </body>
+</html>

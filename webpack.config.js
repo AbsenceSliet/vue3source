@@ -1,10 +1,9 @@
 "use strict";
-
 const path = require("path");
 const webpack = require("webpack");
 module.exports = {
   entry: {
-    app: "./index.js",
+    app: "./test.index.js",
   },
   devtool: "inline-source-map",
   output: {
@@ -12,6 +11,17 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
   },
   mode: "development",
+  resolveLoader:{
+    modules:['node_modules','./loader']
+  },
+  module:{
+    rules:[
+      {
+        test:/\.js$/,
+        use:['syncLoader']
+      }
+    ]
+  },
   devServer: {
     //开发服务器
     hot: true,

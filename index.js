@@ -1,5 +1,7 @@
 import { proxya } from "./example/proxy";
 import "./example/vue1";
+import "./example/event"
+import "./example/vueExample"
 if (module.hot) {
   module.hot.accept();
 }
